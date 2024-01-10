@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+
+  db:
+    extends:
+      file: docker-compose.yml
+      service: db
+
+  tki:
+    image: traefik/whoami:latest
+    ports:
+      - "8090:80"
+
+name: workshop

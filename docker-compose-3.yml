@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+
+  db:
+    extends:
+      file: docker-compose-2.yml
+      service: db
+
+  tki:
+    extends:
+      file: docker-compose-2.yml
+      service: tki
+
+  app:
+    extends:
+        file: docker-compose-2.yml
+        service: app
+    ports:
+      - "8000-8010:8000"
+
+name: workshop
